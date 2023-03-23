@@ -1,0 +1,9 @@
+
+
+#textarea {
+   resize: none;
+ }
+
+ #search{
+   display: flex;
+ }
