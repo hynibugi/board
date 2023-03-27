@@ -17,3 +17,4 @@ public class CountryDAOImpl implements CountryDAO {
 		return jdbcTemplate.query("SELECT * FROM country", new BeanPropertyRowMapper<Country>(Country.class));
 	}
 }
+//return jdbcTemplate.query("SELECT * FROM board", new BeanPropertyRowMapper<Board>(Board.class));

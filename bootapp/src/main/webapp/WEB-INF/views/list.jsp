@@ -16,16 +16,15 @@
 			<th>글제목</th>
 			<th>닉네임</th>
 		</tr>
-		<template id="template">
-			<div class="textlist" id="search">
-				<tr>
-					<td><span class="title"> <a class="link"
-							href="/list?id=">제목</a>
-					</span></td>
-					<td><span class="nickname">닉네임</span></td>
-				</tr>
-			</div>
-		</template>
+		<div class="textlist" id="search">
+			<tr>
+				<td><span class="title"> <a class="link"
+						href="/list?id=">제목</a>
+				</span></td>
+				<td><span class="nickname">닉네임</span></td>
+			</tr>
+		</div>
+
 	</table>
 	<a href="/write" class="button">글쓰기🚀</a>
 	<div id="search">

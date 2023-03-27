@@ -14,20 +14,20 @@ import com.example.service.WriteServiceimpl;
 @Controller
 public class BoardController {
 	JButton mybtn;
-	
+
 	@Autowired
 	private WriteServiceimpl service;
 
-	@GetMapping("/show")
+	@GetMapping("/list")
 	public String show() {
-
-		return "show";
+		//게시글목록 DBㅇㅔ서  읽어서 매핑시켜서 꺼내오기 그걸 view로 나타내기///
+		return "list";
 	}
 
-	@GetMapping("/list")
+	@GetMapping("/show")
 	public String showView(@RequestParam(name = "pk", required = false) String pk) {
 
-		return "list";
+		return "show";
 	}
 
 	@GetMapping("/write")

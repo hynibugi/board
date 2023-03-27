@@ -5,10 +5,11 @@ import com.example.board.Board;
 public interface WriteService {
 // c
 	int board(Board b);
-// r
 	
-// u
+// r
+	Board read(int pk);
 	
 // d
+	int delete(int pk);
 
 }
