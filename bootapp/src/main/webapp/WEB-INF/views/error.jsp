@@ -4,10 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Country List</title>
+<title>error!</title>
 </head>
 <body>
-${ countryList }
-
+${ errorMessage }
 </body>
 </html>

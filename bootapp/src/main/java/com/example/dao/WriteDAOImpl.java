@@ -5,13 +5,14 @@ import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.dao.DataAccessException;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.MissingServletRequestParameterException;
 
 import com.example.board.Board;
-import com.example.country.Country;
 
 @Repository
 public class WriteDAOImpl implements WriteDAO, RowMapper<Board> {
@@ -19,6 +20,7 @@ public class WriteDAOImpl implements WriteDAO, RowMapper<Board> {
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 
+	// c
 	@Override
 	public int insert(Board b) {
 		String sql = "INSERT INTO board (title, nickname, content) VALUES (?, ?, ?)";
@@ -31,6 +33,14 @@ public class WriteDAOImpl implements WriteDAO, RowMapper<Board> {
 		return jdbcTemplate.queryForObject(sql, this, pk);
 	}
 
+	// read(all)
+	@Override
+	public List<Board> getAll() {
+		String sql = "SELECT * FROM board";
+		return jdbcTemplate.query(sql, this);
+	}
+
+	// delete
 	@Override
 	public int delete(int pk) {
 		String sql = "DELETE FROM board WHERE pk = ?";
@@ -47,12 +57,6 @@ public class WriteDAOImpl implements WriteDAO, RowMapper<Board> {
 		String mytextarea = rs.getString("content");
 		b.setMy_textarea(mytextarea);
 		return b;
-	}
-
-	@Override
-	public List<Board> getAll() {
-		return null;
-		
 	}
 
 }

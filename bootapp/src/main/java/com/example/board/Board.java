@@ -36,6 +36,11 @@ public class Board {
 		this.my_textarea = my_textarea;
 	}
 
+	@Override
+	public String toString() {
+		return "Board [title=" + title + ", nickname=" + nickname + ", my_textarea=" + my_textarea + "]";
+	}
+
 	public Board() {
 	}
 

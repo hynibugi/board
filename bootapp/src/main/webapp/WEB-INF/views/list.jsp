@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -17,12 +18,14 @@
 			<th>닉네임</th>
 		</tr>
 		<div class="textlist" id="search">
-			<tr>
-				<td><span class="title"> <a class="link"
-						href="/list?id=">제목</a>
-				</span></td>
-				<td><span class="nickname">닉네임</span></td>
-			</tr>
+			<c:forEach var="board" items="${ list }">
+				<tr>
+					<td><span class="title"> <a class="link"
+							href="/list?id=">${board.title}</a>
+					</span></td>
+					<td><span class="nickname">${board.my_textarea}</span></td>
+				</tr>
+			</c:forEach>
 		</div>
 
 	</table>

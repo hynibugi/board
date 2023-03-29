@@ -14,8 +14,8 @@
     </head>
     <body>
         <div class="selectlist">
-            <div id="title">제목입니다.</div>
-            <div id="text">내용</div>
+            <div id="title">${ board.title }</div>
+            <div id="text">${ board.my_textarea}</div>
             <button id="delete">삭제하기</button>
             <a href="./show.html" class="button">목록으로가기</a>
             
