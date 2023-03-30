@@ -23,8 +23,8 @@ public class WriteDAOImpl implements WriteDAO, RowMapper<Board> {
 	// c
 	@Override
 	public int insert(Board b) {
-		String sql = "INSERT INTO board (title, nickname, content) VALUES (?, ?, ?)";
-		return jdbcTemplate.update(sql, b.getTitle(), b.getNickname(), b.getMy_textarea());
+		String sql = "INSERT INTO board (title, nickname, content,importantcontent) VALUES (?, ?, ?,?)";
+		return jdbcTemplate.update(sql, b.getTitle(), b.getNickname(), b.getMy_textarea(), b.isImportantcontent());
 	}
 
 	@Override
@@ -51,11 +51,17 @@ public class WriteDAOImpl implements WriteDAO, RowMapper<Board> {
 	public Board mapRow(ResultSet rs, int rowNum) throws SQLException {
 		Board b = new Board();
 		String title = rs.getString("title");
-		b.setTitle(title);
 		String nickname = rs.getString("nickname");
-		b.setNickname(nickname);
 		String mytextarea = rs.getString("content");
+		Boolean importantcontent = rs.getBoolean("importantcontent");
+		int pk = rs.getInt("pk");
+
+		b.setTitle(title);
+		b.setNickname(nickname);
 		b.setMy_textarea(mytextarea);
+		b.setImportantcontent(importantcontent);
+		b.setPk(pk);
+
 		return b;
 	}
 

@@ -15,5 +15,4 @@ public interface WriteService {
 	
 // d
 	int delete(int pk);
-
 }

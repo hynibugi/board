@@ -16,5 +16,5 @@ public interface WriteDAO {
 	
 	// 게시글 한개 읽기 Read
 	public Board read(int pk);
-
+	
 }

@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>error!</title>
+<title>삭제완료</title>
 </head>
 <body>
-${ errorMessage }
+삭제됐음
 </body>
 </html>

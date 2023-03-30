@@ -4,6 +4,39 @@ public class Board {
 	String title;
 	String nickname;
 	String my_textarea;
+	int pk;
+	boolean importantcontent;
+
+	public Board(String title, String nickname, String my_textarea, int pk, boolean importantcontent) {
+		super();
+		this.title = title;
+		this.nickname = nickname;
+		this.my_textarea = my_textarea;
+		this.pk = pk;
+		this.importantcontent = importantcontent;
+	}
+
+	@Override
+	public String toString() {
+		return "Board [title=" + title + ", nickname=" + nickname + ", my_textarea=" + my_textarea + ", pk=" + pk
+				+ ", importantcontent=" + importantcontent + "]";
+	}
+
+	public boolean isImportantcontent() {
+		return importantcontent;
+	}
+
+	public void setImportantcontent(boolean importantcontent) {
+		this.importantcontent = importantcontent;
+	}
+
+	public int getPk() {
+		return pk;
+	}
+
+	public void setPk(int pk) {
+		this.pk = pk;
+	}
 
 	public String getTitle() {
 		return title;
@@ -27,18 +60,6 @@ public class Board {
 
 	public void setMy_textarea(String my_textarea) {
 		this.my_textarea = my_textarea;
-	}
-
-	public Board(String title, String nickname, String my_textarea) {
-		super();
-		this.title = title;
-		this.nickname = nickname;
-		this.my_textarea = my_textarea;
-	}
-
-	@Override
-	public String toString() {
-		return "Board [title=" + title + ", nickname=" + nickname + ", my_textarea=" + my_textarea + "]";
 	}
 
 	public Board() {

@@ -7,8 +7,10 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="./css/show.css" />
-<script type="text/javascript" src="./show.js" defer></script>
+<link rel="stylesheet" type="text/css" href="/css/styles.css">
+<link rel="stylesheet" href="./css/show.css"/>
+<link rel="stylesheet" href="./css/list.css"/>
+
 <title>글목록</title>
 </head>
 <body>
@@ -17,16 +19,14 @@
 			<th>글제목</th>
 			<th>닉네임</th>
 		</tr>
-		<div class="textlist" id="search">
-			<c:forEach var="board" items="${ list }">
-				<tr>
-					<td><span class="title"> <a class="link"
-							href="/list?id=">${board.title}</a>
-					</span></td>
-					<td><span class="nickname">${board.my_textarea}</span></td>
-				</tr>
-			</c:forEach>
-		</div>
+		<c:forEach var="board" items="${ list }">
+			<tr>
+				<td><span class="title"> <a class="link"
+						href="/list?id=${board.pk}">${board.title}</a>
+				</span></td>
+				<td><span class="nickname">${board.nickname}</span></td>
+			</tr>
+		</c:forEach>
 
 	</table>
 	<a href="/write" class="button">글쓰기🚀</a>
@@ -38,5 +38,6 @@
 		<textarea rows="1" cols="10">검색</textarea>
 		<button id="button">제출</button>
 	</div>
+
 </body>
 </html>
